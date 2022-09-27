@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whx.dao.UserDao">
+    <!--
+    我们现在使用的这种二级缓存，占用服务器的内存：程序结束后，缓存数据就会消失，这种不好！
+    -->
+    <!--开启myBatis二级缓存-->
+    <!--type:开启自定义第三方缓存-->
+    <cache type="com.whx.cache.RedisCache"/>
+    <delete id="delete">
+        delete from t_user where id = #{id}
+    </delete>
+
+    <select id="findAll" resultType="user">
+        select id,name,age,bir from t_user
+    </select>
+    <select id="findById" resultType="user">
+        select id,name,age,bir from t_user where id = #{id}
+    </select>
+
+</mapper>

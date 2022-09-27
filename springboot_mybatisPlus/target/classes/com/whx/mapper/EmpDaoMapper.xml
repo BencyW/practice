@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whx.dao.EmpDao">
+    <!--两张表共用一个key-->
+    <cache-ref namespace="com.whx.dao.UserDao"/>
+    <select id="findAll" resultType="emp">
+        select id,name from t_emp
+    </select>
+</mapper>
