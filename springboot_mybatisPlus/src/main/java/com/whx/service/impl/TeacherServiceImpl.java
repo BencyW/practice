@@ -31,5 +31,20 @@ public class TeacherServiceImpl implements IteacherService {
         return  teacherPage.getRecords();
     }
 
+    @Override
+    public List<Teacher> findAllTeacher() {
+        return teacherDao.findAllTeacher();
+    }
+
+    @Override
+    public void saveTeacher(Teacher teacher){
+        teacherDao.insert(teacher);
+    }
+
+    @Override
+    public void insertTeacher(Teacher teacher) {
+        teacherDao.insertAll(teacher);
+    }
+
 
 }

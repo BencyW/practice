@@ -4,5 +4,11 @@
 <mapper namespace="com.whx.dao.TeacherDao">
     <!--redis缓存-->
     <cache type="com.whx.cache.RedisCache"/>
+    <insert id="insertAll" parameterType="com.whx.entity.Teacher">
+        insert  into teacher values (#{tid},#{tname},#{tel})
+    </insert>
 
+    <select id="findAllTeacher" resultType="teacher">
+        select tid,tname,tel from teacher
+    </select>
 </mapper>

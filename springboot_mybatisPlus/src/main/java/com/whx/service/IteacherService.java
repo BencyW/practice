@@ -14,4 +14,10 @@ public interface IteacherService {
 
    List<Teacher> limitTeacher();
 
+   List<Teacher> findAllTeacher();
+
+   void saveTeacher(Teacher teacher);
+   void insertTeacher(Teacher teacher);
+
+
 }

@@ -9,6 +9,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
+import java.io.Serializable;
+
 /**
  * @Author whx
  * @Date 2022/9/23 1:44 下午
@@ -18,7 +20,7 @@ import org.springframework.data.annotation.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("teacher")
-public class Teacher {
+public class Teacher implements Serializable {
 //    @TableId(type = IdType.AUTO)//雪花算法
     private Integer tid;
 //    @TableField

@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -23,6 +25,7 @@ public class TestTeacherService {
     @Test
     public void testFindAll(){
         List<Teacher> all = teacherService.findAll();
+        List<Teacher> teachers = new ArrayList<>();
         System.out.println("1:" + all);
 
 
@@ -33,5 +36,20 @@ public class TestTeacherService {
         List<Teacher> teachers = teacherService.limitTeacher();
         System.out.println(teachers);
     }
+
+    @Test
+    public void testInsert(){
+        Teacher teacher = new Teacher();
+        teacher.setTel("123");
+        teacher.setTname("王鸿鑫");
+        teacherService.saveTeacher(teacher);
+    }
+    @Test
+    public void testFindAllTeacher(){
+        List<Teacher> all = teacherService.findAllTeacher();
+        System.out.println(all);
+
+    }
+
 
 }
